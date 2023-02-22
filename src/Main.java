@@ -73,6 +73,20 @@ public class Main extends JFrame
         }
     }
 
+    private class DisplayGuests implements ActionListener
+    {
+        public void actionPerformed(ActionEvent ae)
+        {
+            StringBuilder disGuest = new StringBuilder();
+            for (Friend friend : friendList)
+            {
+                disGuest.append(friend.toString()).append("\n");
+            }
+            JOptionPane.showMessageDialog(null, disGuest.toString(),
+                    "Guests:", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
     public static void main(String[] args)
     {
         JOptionPane.showMessageDialog(null, "Welcome to the Party Picker.\n\n" +
