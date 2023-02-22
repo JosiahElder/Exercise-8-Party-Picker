@@ -14,5 +14,7 @@ public class Main
                 "Enter person's name and the type of food they're likely to bring, \n" +
                 "then indicate whether they are actually invited to the party or not.");
 
+        friendList = new ArrayList<Friend>();
+
     }
 }
