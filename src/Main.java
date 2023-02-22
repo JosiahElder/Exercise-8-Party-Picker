@@ -4,7 +4,7 @@ import java.awt.event.*;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
-public class Main
+public class Main extends JFrame
 {
     private JLabel nameL;
     private JLabel foodL;
@@ -13,24 +13,48 @@ public class Main
     private JTextField nameF;
     private JTextField foodF;
 
-    private JCheckBox invitedBox;
+    private JCheckBox invitedChk;
 
-    private JButton addButton;
-    private JButton reportButton;
+    private JButton addBtn;
+    private JButton displayBtn;
 
     private ArrayList<Friend> friendList;
 
     public Main()
     {
-        super();
+        super("Party Picker");
         friendList = new ArrayList<Friend>();
 
-        nameL = new JLabel("Name:");
+        nameL = new JLabel("Full Name:");
         foodL = new JLabel("Food:");
         invitedL = new JLabel("Invited:");
 
         nameF = new JTextField(30);
         foodF = new JTextField(30);
+
+        invitedChk = new JCheckBox();
+        addBtn = new JButton("Add Friend");
+        displayBtn = new JButton("Display Report");
+
+        setLayout(new GridLayout(4, 2));
+        add(nameL);
+        add(nameF);
+
+        add(foodL);
+        add(foodF);
+
+        add(invitedL);
+        add(invitedChk);
+
+        add(addBtn);
+        add(displayBtn);
+
+        addBtn.addActionListener(new AddButtonListener());
+        displayBtn.addActionListener(new ReportButtonListener());
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(350, 150);
+        setVisible(true);
     }
 
     public static void main(String[] args)
