@@ -49,12 +49,28 @@ public class Main extends JFrame
         add(addBtn);
         add(displayBtn);
 
-        addBtn.addActionListener(new AddButtonListener());
-        displayBtn.addActionListener(new ReportButtonListener());
+        addBtn.addActionListener(new AddFriendButton());
+        displayBtn.addActionListener(new DisplayGuests());
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(350, 150);
         setVisible(true);
+    }
+
+    private class AddFriendButton implements ActionListener
+    {
+        public void actionPerformed(ActionEvent ae)
+        {
+            String firstname = nameF.getText();
+            String lastname = nameF.getText();
+            String food = foodF.getText();
+            boolean invited = invitedChk.isSelected();
+            Friend newFriend = new Friend(firstname, lastname, invited, food);
+            friendList.add(newFriend);
+            nameF.setText("");
+            foodF.setText("");
+            invitedChk.setSelected(false);
+        }
     }
 
     public static void main(String[] args)
