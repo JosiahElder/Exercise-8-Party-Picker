@@ -1,3 +1,5 @@
+// Ready for Marking
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -65,7 +67,9 @@ public class Main extends JFrame
             String lastname = nameF.getText();
             String food = foodF.getText();
             boolean invited = invitedChk.isSelected();
+
             Friend newFriend = new Friend(firstname, lastname, invited, food);
+
             friendList.add(newFriend);
             nameF.setText("");
             foodF.setText("");
@@ -78,10 +82,12 @@ public class Main extends JFrame
         public void actionPerformed(ActionEvent ae)
         {
             StringBuilder disGuest = new StringBuilder();
+
             for (Friend friend : friendList)
             {
                 disGuest.append(friend.toString()).append("\n");
             }
+
             JOptionPane.showMessageDialog(null, disGuest.toString(),
                     "Guests:", JOptionPane.INFORMATION_MESSAGE);
         }
