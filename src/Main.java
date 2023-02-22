@@ -22,7 +22,15 @@ public class Main
 
     public Main()
     {
+        super();
+        friendList = new ArrayList<Friend>();
 
+        nameL = new JLabel("Name:");
+        foodL = new JLabel("Food:");
+        invitedL = new JLabel("Invited:");
+
+        nameF = new JTextField(30);
+        foodF = new JTextField(30);
     }
 
     public static void main(String[] args)
