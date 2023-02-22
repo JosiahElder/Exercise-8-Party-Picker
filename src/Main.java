@@ -20,11 +20,17 @@ public class Main
 
     private ArrayList<Friend> friendList;
 
-    public static void main(String[] args)
+    public Main()
     {
 
+    }
+
+    public static void main(String[] args)
+    {
         JOptionPane.showMessageDialog(null, "Welcome to the Party Picker.\n\n" +
                 "Enter person's name and the type of food they're likely to bring, \n" +
                 "then indicate whether they are actually invited to the party or not.");
+
+        new Main();
     }
 }
